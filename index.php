@@ -357,7 +357,7 @@
     </nav>
     <div class="actions">
      
-      <button class="icon-btn" id="themeToggle" title="Toggle theme"><i class="fa fa-moon"></i></button>
+      <button class="icon-btn" id="themeToggle" title="Toggle theme"><i class="fa fa-sun"></i></button>
       <button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Order Now</button>
       <button id="hamburger" class="icon-btn"><i class="fa fa-bars"></i></button>
     </div>
@@ -709,10 +709,11 @@ echo "</div></div></div></div>";
 <section id="contact">
   <div class="container">
     <h3 class="section-title">Contact & Booking</h3>
-    <div class="contact-grid">
-      <div class="contact-card">
-       
-        <h4>Send a Message</h4>
+    <div class="contact-grid" style="display:flex;flex-wrap:wrap;gap:24px;">
+
+      <!-- CONTACT / BOOKING FORM -->
+      <div class="contact-card" style="flex:1;min-width:280px;">
+        <h4>Send a Message / Booking</h4>
         <form id="contactForm" action="process_form.php" method="POST">
           <input name="name" placeholder="Your name" required>
           <input name="email" placeholder="Your email">
@@ -720,17 +721,39 @@ echo "</div></div></div></div>";
           <textarea name="message" rows="5" placeholder="Message / booking details" required></textarea>
           <button class="btn" type="submit">Send Message</button>
         </form>
+        <!-- SUCCESS MESSAGE -->
+        <div id="contactSuccess" style="display:none;margin-top:12px;padding:12px;background:#d4edda;color:#155724;border-radius:8px;font-weight:600;">
+          Your query / booking submitted successfully!
+        </div>
       </div>
-      <div class="contact-card">
+
+      <!-- CONTACT INFO -->
+      <div class="contact-card" style="flex:1;min-width:280px;">
         <h4>Visit / Contact</h4>
         <p><i class="fa fa-map-marker-alt"></i> Hazratganj, Lucknow</p>
-        <p><i class="fa fa-phone"></i> +91 9876543210</p>
+        <p><i class="fa fa-phone"></i> +91 6389489942</p>
         <p><i class="fa fa-envelope"></i> info@zestybites.example</p>
-        <div style="margin-top:12px"><iframe src="https://maps.google.com/maps?q=Lucknow&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%;height:200px;border:0;border-radius:8px"></iframe></div>
+        <div style="margin-top:12px">
+          <iframe src="https://maps.google.com/maps?q=Lucknow&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%;height:200px;border:0;border-radius:8px"></iframe>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
+
+<script>
+  // FORM SUBMISSION SUCCESS MESSAGE
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault(); // Prevent page reload
+    const success = document.getElementById('contactSuccess');
+    success.style.display = 'block'; // Show success message
+    // Hide it automatically after 4 seconds
+    setTimeout(() => { success.style.display = 'none'; }, 4000);
+    this.reset(); // Clear form fields
+  });
+</script>
+
 
 <!-- FOOTER -->
 <!-- FOOTER -->
