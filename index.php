@@ -162,25 +162,29 @@
     .about-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.06);transition:transform .25s,box-shadow .25s}
     .about-card:hover{transform:translateX(6px);box-shadow:0 20px 50px rgba(0,0,0,0.08)}
 
-    /* MENU: grid */
-    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .food-card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.06);cursor:pointer;transition:transform .25s}
-    .food-card:hover{transform:translateY(-6px)}
-    .food-card img{width:100%;height:170px;object-fit:cover}
-    .food-card .body{padding:12px}
-    .food-meta{display:flex;justify-content:space-between;align-items:center}
-    .btn-cart{background:#fff;border:1px solid var(--accent);color:var(--accent);padding:8px 12px;border-radius:999px;cursor:pointer;font-weight:700}
+   /* MENU grid */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.food-card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.06);cursor:pointer;transition:transform .25s}
+.food-card:hover{transform:translateY(-6px)}
+.food-card img{width:100%;height:170px;object-fit:cover}
+.food-card .body{padding:12px}
+.food-meta{display:flex;justify-content:space-between;align-items:center}
+.btn-cart{background:#fff;border:1px solid var(--accent);color:var(--accent);padding:8px 12px;border-radius:999px;cursor:pointer;font-weight:700}
 
-    /* MODAL */
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:12000;padding:18px}
-    .modal.show{display:flex}
-    .modal-box{width:100%;max-width:980px;background:#fff;border-radius:12px;overflow:hidden;display:flex;gap:12px}
-    .modal-left{flex:1;padding:12px}
-    .modal-left .main{width:100%;height:420px;background-size:cover;background-position:center;border-radius:8px}
-    .thumbs{display:flex;gap:8px;margin-top:10px;overflow:auto}
-    .thumbs img{width:80px;height:60px;object-fit:cover;border-radius:8px;cursor:pointer}
-    .modal-right{width:340px;padding:18px;background:linear-gradient(180deg,#fff,#fff)}
-    .modal-close{position:absolute;right:10px;top:8px;background:transparent;border:none;font-size:22px;cursor:pointer}
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:12000;padding:18px}
+.modal.show{display:flex}
+.modal-box{width:100%;max-width:980px;background:#fff;border-radius:12px;overflow:hidden;display:flex;gap:12px;position:relative}
+.modal-left{flex:1;padding:12px}
+.modal-left .main{width:100%;height:420px;background-size:cover;background-position:center;border-radius:8px}
+.thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto}
+.thumbs img{width:80px;height:60px;object-fit:cover;border-radius:8px;cursor:pointer}
+.modal-right{width:340px;padding:18px;background:#fff;overflow-y:auto}
+.modal-close{position:absolute;right:10px;top:8px;background:transparent;border:none;font-size:22px;cursor:pointer}
+
+/* ZOOM MODAL */
+.zoom-box{position:relative;max-width:80%;max-height:80%}
+.zoom-box img{max-width:100%;max-height:100%;border-radius:8px}
 
   /* GALLERY CAROUSEL */
 .gallery-carousel{
@@ -264,7 +268,8 @@
 }
 .modal-content {
   position: relative;
-  background-image: url('assets/images/foodie3.jfif'); /* Your background image */
+  background:#fff7f1;
+  /* background-image: url('assets/images/foodie3.jfif'); Your background image */
   background-size: cover;
   background-position: center;
   margin: 10% auto;
@@ -347,17 +352,17 @@
   <div class="nav-wrap container">
     <div class="brand"><img src="assets/images/logo.png" alt="logo"><h1>Zesty Bites</h1></div>
     <nav class="main">
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#offers">Offers</a>
-      <a href="#contact">Contact</a>
+      <a href="#hero" style="color:red">Home</a>
+      <a href="#about"style="color:red">About</a>
+      <a href="#menu"style="color:red">Menu</a>
+      <a href="#gallery"style="color:red">Gallery</a>
+      <a href="#testimonials"style="color:red">Testimonials</a>
+      <a href="#offers"style="color:red">Offers</a>
+      <a href="#contact"style="color:red">Contact</a>
     </nav>
     <div class="actions">
      
-      <button class="icon-btn" id="themeToggle" title="Toggle theme"><i class="fa fa-sun"></i></button>
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" style="color:red"><i class="fa fa-sun"></i></button>
       <button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Order Now</button>
       <button id="hamburger" class="icon-btn"><i class="fa fa-bars"></i></button>
     </div>
@@ -369,7 +374,8 @@
     <div class="hero-left">
       <div class="eyebrow">Popular</div>
       <h2>Fresh combos, quick bites & big smiles</h2>
-      <p>From steaming momos to loaded burgers — handcrafted, hygienic and served fast. Order online or walk in.</p>
+      <p style="color:red">From steaming momos to loaded burgers — handcrafted, hygienic and served fast. Order online or walk in.</p>
+      <p style="color:red">At Zesty Bites, we believe food is more than just a meal—it’s an experience that brings people together. From sizzling starters to delightful desserts, every dish is crafted with passion, fresh ingredients, and a touch of love.</p>
       <div class="ctas">
         <button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Explore Menu</button>
         <button class="btn" style="background:#fff;color:var(--accent);border:1px solid var(--accent)">Reserve Table</button>
@@ -381,7 +387,7 @@
       <div class="hero-card" style="position:relative;overflow:hidden;">
         <div class="hero-slider">
           <img src="assets/images/vegmomo.jpg" alt="hero1">
-          <img src="assets/images/pannepizza.jpg" alt="hero2">
+          <img src="assets/images/biryani.jpg" alt="hero2">
           <img src="assets/images/cheeseburger1.jpg" alt="hero3">
           <img src="assets/images/coldcoffee.jpg" alt="hero4">
         </div>
@@ -406,7 +412,7 @@
           'assets/images/biryani.jpg',
           'assets/images/cakeshake.jpg',
           'assets/images/combo2.jpg',
-          'assets/images/pannepizza.jpg',
+          'assets/images/pannerpizza1.jpg',
           'assets/images/chillipotato.jpg'
         );
 
@@ -444,6 +450,7 @@
         <p style="color:red; font-size:16px; line-height:1.6;">
           Zesty Bites has been delighting taste buds for over 50 years. From fresh, handcrafted combos to mouthwatering desserts, we are committed to delivering flavors that spark joy and memories for every bite.
         </p>
+        <p style="color:red; font-size:16px; line-height:1.6;">It is more than just a restaurant—it’s a celebration of flavors, culture, and community. Every recipe we create is inspired by a passion for food and a love for bringing people together. From traditional favorites to modern fusions, we craft dishes that connect hearts as much as they please taste buds.</p>
 
         <!-- Highlights -->
         <div class="highlights" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:16px; margin-top:12px;">
@@ -453,7 +460,8 @@
             '50 Years Experience',
             '100+ Dishes',
             '5000+ Happy Customers',
-            '24/7 Online Orders'
+            '24/7 Online Orders',
+             '24/7 Online Delivery'
           );
 
           foreach($highlights as $i => $h){
@@ -490,34 +498,79 @@
     <div class="menu-grid">
       <?php
       $menu = array(
-        array('name'=>'Paneer Pizza','price'=>119,'rating'=>4.5,'imgs'=>array('assets/images/pannepizza.jpg','assets/images/pannerpizza1.jpg','assets/images/pizza2.jpg')),
-        array('name'=>'Cheese Burger','price'=>139,'rating'=>4.3,'imgs'=>array('assets/images/cheeseburger1.jpg','assets/images/cheeseburger.avif','assets/images/vegburger.jpg','assets/images/paneertikkaburger.jpg')),
-        array('name'=>'Cold Coffee','price'=>79,'rating'=>4.0,'imgs'=>array('assets/images/coldcoffee.jpg','assets/images/coldcoffee1.jpg')),
-        array('name'=>'Chilli Potato','price'=>99,'rating'=>4.1,'imgs'=>array('assets/images/chillipotato.jpg','assets/images/cheesefries.jpg')),
-        array('name'=>'Spring Roll','price'=>89,'rating'=>4.0,'imgs'=>array('assets/images/springroll.jpg')),
-        array('name'=>'Biryani','price'=>199,'rating'=>4.1,'imgs'=>array('assets/images/biryani.jpg','assets/images/vegbriyani.jpg')),
-        array('name'=>'Grilled Cheese Sandwich','price'=>69,'rating'=>4.0,'imgs'=>array('assets/images/grilledcheesesandwich.jpg')),
-        array('name'=>'Special Chatpat','price'=>129,'rating'=>4.1,'imgs'=>array('assets/images/combo1.webp','assets/images/combo2.jpg','assets/images/combo3.jpg')),
-        
+        array(
+          'name'=>'Paneer Pizza',
+          'price'=>119,
+          'rating'=>4.5,
+          'desc'=>'Our Paneer Pizza is topped with fresh paneer cubes, mozzarella cheese, and a blend of tangy sauces for a perfect bite.',
+          'imgs'=>array('assets/images/pannepizza.jpg','assets/images/pannerpizza1.jpg','assets/images/pizza2.jpg')
+        ),
+        array(
+          'name'=>'Cheese Burger',
+          'price'=>139,
+          'rating'=>4.3,
+          'desc'=>'Juicy veg patty layered with cheddar cheese, crispy lettuce, and creamy mayo – a real cheesy delight!',
+          'imgs'=>array('assets/images/cheeseburger1.jpg','assets/images/cheeseburger.avif','assets/images/vegburger.jpg','assets/images/paneertikkaburger.jpg')
+        ),
+        array(
+          'name'=>'Cold Coffee',
+          'price'=>79,
+          'rating'=>4.0,
+          'desc'=>'Refreshing cold coffee blended with ice, sugar, and milk to give you the perfect chilled boost.',
+          'imgs'=>array('assets/images/coldcoffee.jpg','assets/images/coldcoffee1.jpg')
+        ),
+        array(
+          'name'=>'Chilli Potato',
+          'price'=>99,
+          'rating'=>4.1,
+          'desc'=>'Crispy fried potatoes tossed in spicy and tangy sauces, garnished with sesame and spring onions.',
+          'imgs'=>array('assets/images/chillipotato.jpg','assets/images/cheesefries.jpg')
+        ),
+        array(
+          'name'=>'Spring Roll',
+          'price'=>89,
+          'rating'=>4.0,
+          'desc'=>'Golden fried rolls stuffed with seasoned veggies – a perfect crunchy snack.',
+          'imgs'=>array('assets/images/springroll.jpg')
+        ),
+        array(
+          'name'=>'Biryani',
+          'price'=>199,
+          'rating'=>4.1,
+          'desc'=>'Aromatic basmati rice layered with spices, vegetables, and herbs – served hot and fresh.',
+          'imgs'=>array('assets/images/biryani.jpg','assets/images/vegbriyani.jpg')
+        ),
+        array(
+          'name'=>'Grilled Cheese Sandwich',
+          'price'=>69,
+          'rating'=>4.0,
+          'desc'=>'Crispy bread slices grilled with layers of melted cheese – a quick and tasty treat.',
+          'imgs'=>array('assets/images/grilledcheesesandwich.jpg')
+        ),
+        array(
+          'name'=>'Special Chatpat',
+          'price'=>129,
+          'rating'=>4.1,
+          'desc'=>'A combo of Indian street flavors – tangy, spicy, and mouth-watering.',
+          'imgs'=>array('assets/images/combo1.webp','assets/images/combo2.jpg','assets/images/combo3.jpg')
+        ),
       );
       foreach($menu as $i=>$m){
         $img = htmlspecialchars($m['imgs'][0]);
         $name = htmlspecialchars($m['name']);
         $price = htmlspecialchars($m['price']);
         $rating = htmlspecialchars($m['rating']);
-      echo "<div class='food-card' onclick=\"openFoodModal($i)\">";
-echo "<img src='$img' alt='$name'>";
-echo "<div class='body'><h4>$name</h4>";
-echo "<div class='food-meta'><div>₹ $price</div><div>";
-// Stars display
-$fullStars = floor($rating);
-$halfStar = $rating - $fullStars >= 0.5 ? true : false;
-for($s=0;$s<$fullStars;$s++) echo "<i class='fa fa-star' style='color:#f5c518'></i>";
-if($halfStar) echo "<i class='fa fa-star-half-alt' style='color:#f5c518'></i>";
-$emptyStars = 5 - $fullStars - ($halfStar?1:0);
-for($s=0;$s<$emptyStars;$s++) echo "<i class='fa fa-star-o' style='color:#f5c518'></i>";
-echo "</div></div></div></div>";
-
+        echo "<div class='food-card' onclick=\"openFoodModal($i)\">";
+        echo "<img src='$img' alt='$name'>";
+        echo "<div class='body'><h4>$name</h4>";
+        echo "<div class='food-meta'><div>₹ $price</div><div>";
+        $fullStars = floor($rating);
+        $halfStar = $rating - $fullStars >= 0.5 ? true : false;
+        for($s=0;$s<$fullStars;$s++) echo "<i class='fa fa-star' style='color:#f5c518'></i>";
+        if($halfStar) echo "<i class='fa fa-star-half-alt' style='color:#f5c518'></i>";
+        $emptyStars = 5 - $fullStars - ($halfStar?1:0);
+        for($s=0;$s<$emptyStars;$s++) echo "<i class='fa fa-star-o' style='color:#f5c518'></i>";
+        echo "</div></div></div></div>";
       }
       ?>
     </div>
@@ -529,18 +582,28 @@ echo "</div></div></div></div>";
   <div class="modal-box">
     <button class="modal-close" onclick="closeFoodModal()">&times;</button>
     <div class="modal-left">
-      <div id="modalMain" class="main" style="background-image:url('assets/images/vegmomo.jpg')"></div>
+      <div id="modalMain" class="main"></div>
       <div class="thumbs" id="modalThumbs"></div>
     </div>
     <div class="modal-right">
-      <h3 id="modalName">Food Name</h3>
+      <h3 id="modalName" style="color:red">Food Name</h3>
       <div id="modalRating">⭐⭐⭐⭐</div>
       <div style="margin-top:8px;font-size:20px;color:var(--accent)">₹ <span id="modalPrice">129</span></div>
-      <p id="modalDesc">Delicious & freshly prepared.</p>
-      <div style="margin-top:12px;display:flex;gap:10px"><button class="icon-btn" onclick="closeFoodModal()">Close</button></div>
+      <p id="modalDesc" style="margin-top:8px;color:#444">Delicious & freshly prepared.</p>
+      <div style="margin-top:12px;display:flex;gap:10px">
+        <button class="icon-btn" onclick="closeFoodModal()">Close</button>
+      </div>
       <h4 style="margin-top:18px">Related</h4>
-      <div id="modalRelated" style="display:flex;gap:8px;overflow:auto"></div>
+      <div id="modalRelated" style="display:flex;gap:8px;overflow-x:auto;padding:5px"></div>
     </div>
+  </div>
+</div>
+
+<!-- IMAGE ZOOM MODAL -->
+<div id="imgZoomModal" class="modal" aria-hidden="true">
+  <div class="zoom-box">
+    <button class="modal-close" onclick="closeZoom()">&times;</button>
+    <img id="zoomImg" src="" alt="Zoomed Image">
   </div>
 </div>
 
@@ -593,9 +656,9 @@ echo "</div></div></div></div>";
         <!-- Example testimonial -->
         <div class="testimonial-slide" style="min-width:100%;display:flex;align-items:center;gap:20px;padding:24px;background:#fff;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,0.06)">
           <div style="flex:1;text-align:left">
-            <p style="font-style:italic;font-size:16px;color:#555">“Proin iaculis purus consequat sem cure digni sim donec porttitor a entum suscipit rhoncus.”</p>
-            <strong style="display:block;margin-top:12px;font-size:14px;color:#111">Saul Goodman</strong>
-            <span style="font-size:12px;color:#888">CEO & Founder</span>
+            <p style="font-style:italic;font-size:16px;color:red">“Proin iaculis purus consequat sem cure digni sim donec porttitor a entum suscipit rhoncus.”</p>
+            <strong style="display:block;margin-top:12px;font-size:14px;color:red">Saul Goodman</strong>
+            <span style="font-size:12px;color:red">CEO & Founder</span>
             <div style="margin-top:6px;color:#f5c518">
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
@@ -607,9 +670,9 @@ echo "</div></div></div></div>";
 
         <div class="testimonial-slide" style="min-width:100%;display:flex;align-items:center;gap:20px;padding:24px;background:#fff;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,0.06)">
           <div style="flex:1;text-align:left">
-            <p style="font-style:italic;font-size:16px;color:#555">“Proin iaculis purus consequat sem cure digni sim donec porttitor a entum suscipit rhoncus.”</p>
-            <strong style="display:block;margin-top:12px;font-size:14px;color:#111">Harsh </strong>
-            <span style="font-size:12px;color:#888">General Manager</span>
+            <p style="font-style:italic;font-size:16px;color:red">“Proin iaculis purus consequat sem cure digni sim donec porttitor a entum suscipit rhoncus.”</p>
+            <strong style="display:block;margin-top:12px;font-size:14px;color:red">Harsh </strong>
+            <span style="font-size:12px;color:red">General Manager</span>
             <div style="margin-top:6px;color:#f5c518">
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
@@ -621,9 +684,9 @@ echo "</div></div></div></div>";
 
          <div class="testimonial-slide" style="min-width:100%;display:flex;align-items:center;gap:20px;padding:24px;background:#fff;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,0.06)">
           <div style="flex:1;text-align:left">
-            <p style="font-style:italic;font-size:16px;color:#555">“Proin iaculis purus consequat sem cure digni sim donec porttitor a entum suscipit rhoncus.”</p>
-            <strong style="display:block;margin-top:12px;font-size:14px;color:#111">Mr. Reddy Rathore </strong>
-            <span style="font-size:12px;color:#888">HOD</span>
+            <p style="font-style:italic;font-size:16px;color:red">“Proin iaculis purus consequat sem cure digni sim donec porttitor a entum suscipit rhoncus.”</p>
+            <strong style="display:block;margin-top:12px;font-size:14px;color:red">Mr. Reddy Rathore </strong>
+            <span style="font-size:12px;color:red">HOD</span>
             <div style="margin-top:6px;color:#f5c518">
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
             </div>
@@ -635,9 +698,9 @@ echo "</div></div></div></div>";
         <!-- Add more testimonial-slide blocks here -->
         <div class="testimonial-slide" style="min-width:100%;display:flex;align-items:center;gap:20px;padding:24px;background:#fff;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,0.06)">
           <div style="flex:1;text-align:left">
-            <p style="font-style:italic;font-size:16px;color:#555">“Fast delivery and tasty burgers — really impressed!”</p>
-            <strong style="display:block;margin-top:12px;font-size:14px;color:#111">Sana P.</strong>
-            <span style="font-size:12px;color:#888">Food Blogger</span>
+            <p style="font-style:italic;font-size:16px;color:red">“Fast delivery and tasty burgers — really impressed!”</p>
+            <strong style="display:block;margin-top:12px;font-size:14px;color:red">Sana P.</strong>
+            <span style="font-size:12px;color:red">Food Blogger</span>
             <div style="margin-top:6px;color:#f5c518">
               <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
             </div>
@@ -670,26 +733,26 @@ echo "</div></div></div></div>";
       <div class="offer-card" style="background:#fff;border-radius:15px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,0.1);position:relative;overflow:hidden;text-align:center;transition:transform 0.3s">
         <span class="badge" style="position:absolute;top:15px;right:-40px;background:#e94e3a;color:#fff;padding:8px 50px;transform:rotate(45deg);font-size:14px;font-weight:bold">50% OFF</span>
         <img src="assets/images/vegburger.jpg" alt="Veg Burger" style="width:100%;border-radius:100%;margin-bottom:15px">
-        <h4>Veg Burger</h4>
-        <p>Buy 1 Get 1 Free on delicious Veg Burgers!</p>
+        <h4 style="color :red">Veg Burger</h4>
+        <p  style="color :red">Buy 1 Get 1 Free on delicious Veg Burgers!</p>
         <button class="btn">Order Now</button>
       </div>
 
       <!-- Offer Card 2 -->
       <div class="offer-card" style="background:#fff;border-radius:15px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,0.1);position:relative;overflow:hidden;text-align:center;transition:transform 0.3s">
-        <span class="badge" style="position:absolute;top:15px;right:-40px;background:#ff9800;color:#fff;padding:8px 50px;transform:rotate(45deg);font-size:14px;font-weight:bold">20% OFF</span>
+        <span class="badge" style=" color:red;position:absolute;top:15px;right:-40px;background:#ff9800;color:#fff;padding:8px 50px;transform:rotate(45deg);font-size:14px;font-weight:bold">20% OFF</span>
         <img src="assets/images/pizza2.jpg" alt="Chilli Potato" style="width:100%;border-radius:100%;margin-bottom:15px">
-        <h4>Chilli Potato</h4>
-        <p>Spicy & crispy chilli potato at flat 20% off.</p>
-        <button class="btn">Grab Deal</button>
+        <h4  style="color :red">Chilli Potato</h4>
+        <p  style="color :red">Spicy & crispy chilli potato at flat 20% off.</p>
+        <button class="btn" >Grab Deal</button>
       </div>
 
       <!-- Offer Card 3 -->
       <div class="offer-card" style="background:#fff;border-radius:15px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,0.1);position:relative;overflow:hidden;text-align:center;transition:transform 0.3s">
         <span class="badge" style="position:absolute;top:15px;right:-40px;background:#4caf50;color:#fff;padding:8px 50px;transform:rotate(45deg);font-size:14px;font-weight:bold">Combo Deal</span>
         <img src="assets/images/combo2.jpg" alt="Combo Meal" style="width:100%;border-radius:100%;margin-bottom:15px">
-        <h4>Combo 1</h4>
-        <p>Free Fries & Drink with every Combo 1 purchase.</p>
+        <h4  style="color :red">Combo 1</h4>
+        <p  style="color :red">Free Fries & Drink with every Combo 1 purchase.</p>
         <button class="btn">Claim Offer</button>
       </div>
 
@@ -779,10 +842,10 @@ echo "</div></div></div></div>";
       <p><a href="#hero">Home</a></p>
       <p><a href="#about">About</a></p>
       <p><a href="#menu">Menu</a></p>
-      <p><a href="#gallery">Gallery</a></p>
+      <!-- <p><a href="#gallery">Gallery</a></p> -->
       <p><a href="#testimonials">Testimonials</a></p>
-      <p><a href="#offers">Offers</a></p>
-      <p><a href="#contact">Contact</a></p>
+      <!-- <p><a href="#offers">Offers</a></p> -->
+      <!-- <p><a href="#contact">Contact</a></p> -->
       <p><a href="#" onclick="openFeedbackModal()">Feedback</a></p>
       
       <p><a href="#" id="privacyLink" class="text-light">Privacy & Policy</a></p>
@@ -832,7 +895,7 @@ echo "</div></div></div></div>";
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/919876543210" target="_blank" class="whatsapp">
-  <i class="fab fa-whatsapp" style="font-size:20px;"></i>
+ <i class="fab fa-whatsapp" style="font-size:20px;"></i>
 </a>
 
 <!-- Feedback Modal -->
@@ -857,7 +920,7 @@ echo "</div></div></div></div>";
 </script>
 
 
-<button class="whatsapp" title="WhatsApp" onclick="window.open('https://wa.me/6389489942','_blank')"><i class="fa fa-whatsapp"></i></button>
+<button class="whatsapp" title="WhatsApp" onclick="window.open('https://wa.me/6389489942','_blank')"><i class="fab fa-whatsapp"></i></button>
 <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa fa-arrow-up"></i></button>
 
 <!-- Feedback modal -->
@@ -961,76 +1024,70 @@ setInterval(nextHero, 4000); // auto slide every 4s
       localStorage.setItem('theme', 'dark');
     }
   });
-  // Food modal handling
-  const menuData = <?php echo json_encode($menu); ?>;
-  function openFoodModal(i){
-    const data = menuData[i];
-    document.getElementById('modalMain').style.backgroundImage = "url('" + data.imgs[0] + "')";
-    document.getElementById('modalName').innerText = data.name;
-    document.getElementById('modalPrice').innerText = data.price;
-    function getStars(rating){
-  let full = Math.floor(rating), half = (rating-full)>=0.5, empty = 5-full-(half?1:0);
+ const menuData = <?php echo json_encode($menu); ?>;
+
+function renderStars(rating){
+  const fullStars = Math.floor(rating);
+  const halfStar = rating - fullStars >= 0.5;
   let html = '';
-  for(let i=0;i<full;i++) html += '<i class="fa fa-star" style="color:#f5c518"></i>';
-  if(half) html += '<i class="fa fa-star-half-alt" style="color:#f5c518"></i>';
-  for(let i=0;i<empty;i++) html += '<i class="fa fa-star-o" style="color:#f5c518"></i>';
+  for(let i=0;i<fullStars;i++) html += '<i class="fa fa-star" style="color:#f5c518"></i>';
+  if(halfStar) html += '<i class="fa fa-star-half-alt" style="color:#f5c518"></i>';
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+  for(let i=0;i<emptyStars;i++) html += '<i class="fa fa-star-o" style="color:#f5c518"></i>';
   return html;
 }
 
-    document.getElementById('modalRating').innerText = data.rating;
-    // thumbs
-    const thumbs = document.getElementById('modalThumbs'); thumbs.innerHTML=''; data.imgs.forEach(u=>{const im=document.createElement('img');im.src=u;im.addEventListener('click',()=>document.getElementById('modalMain').style.backgroundImage="url('"+u+"')");thumbs.appendChild(im)});
-    // related
-    const related = document.getElementById('modalRelated'); related.innerHTML=''; for(let j=0;j<menuData.length;j++){ if(j!==i){ const r=document.createElement('img'); r.src=menuData[j].imgs[0]; r.style.width='80px'; r.style.height='60px'; r.style.objectFit='cover'; r.style.borderRadius='6px'; related.appendChild(r);}} 
-    document.getElementById('foodModal').classList.add('show'); document.body.style.overflow='hidden';
-  }
-  function closeFoodModal(){ document.getElementById('foodModal').classList.remove('show'); document.body.style.overflow='auto'; }
-
-
-
-function renderStars(rating){
-    const fullStars = Math.floor(rating);
-    const halfStar = rating - fullStars >= 0.5;
-    let html = '';
-    for(let i=0;i<fullStars;i++) html += '<i class="fa fa-star" style="color:#f5c518"></i>';
-    if(halfStar) html += '<i class="fa fa-star-half-alt" style="color:#f5c518"></i>';
-    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-    for(let i=0;i<emptyStars;i++) html += '<i class="far fa-star" style="color:#f5c518"></i>';
-    return html;
-}
-
-// Update modal to show stars
 function openFoodModal(i){
-    const data = menuData[i];
-    document.getElementById('modalMain').style.backgroundImage = "url('" + data.imgs[0] + "')";
-    document.getElementById('modalName').innerText = data.name;
-    document.getElementById('modalPrice').innerText = data.price;
-    document.getElementById('modalRating').innerHTML = renderStars(data.rating); // stars now
-    const thumbs = document.getElementById('modalThumbs');
-    thumbs.innerHTML='';
-    data.imgs.forEach(u=>{
-        const im=document.createElement('img');
-        im.src=u;
-        im.addEventListener('click',()=>document.getElementById('modalMain').style.backgroundImage="url('"+u+"')");
-        thumbs.appendChild(im);
-    });
-    const related = document.getElementById('modalRelated');
-    related.innerHTML='';
-    for(let j=0;j<menuData.length;j++){
-        if(j!==i){
-            const r=document.createElement('img');
-            r.src=menuData[j].imgs[0];
-            r.style.width='80px';
-            r.style.height='60px';
-            r.style.objectFit='cover';
-            r.style.borderRadius='6px';
-            related.appendChild(r);
-        }
+  const data = menuData[i];
+  document.getElementById('modalMain').style.backgroundImage = "url('" + data.imgs[0] + "')";
+  document.getElementById('modalName').innerText = data.name;
+  document.getElementById('modalPrice').innerText = data.price;
+  document.getElementById('modalRating').innerHTML = renderStars(data.rating);
+  document.getElementById('modalDesc').innerText = data.desc;
+
+  // thumbs
+  const thumbs = document.getElementById('modalThumbs');
+  thumbs.innerHTML='';
+  data.imgs.forEach(u=>{
+    const im=document.createElement('img');
+    im.src=u;
+    im.addEventListener('click',()=>document.getElementById('modalMain').style.backgroundImage="url('"+u+"')");
+    thumbs.appendChild(im);
+  });
+
+  // related
+  const related = document.getElementById('modalRelated');
+  related.innerHTML='';
+  for(let j=0;j<menuData.length;j++){
+    if(j!==i){
+      const r=document.createElement('img');
+      r.src=menuData[j].imgs[0];
+      r.onclick=()=>openZoom(r.src);
+      r.style.cursor="pointer";
+      r.style.width='80px';
+      r.style.height='60px';
+      r.style.objectFit='cover';
+      r.style.borderRadius='6px';
+      related.appendChild(r);
     }
-    document.getElementById('foodModal').classList.add('show');
-    document.body.style.overflow='hidden';
+  }
+
+  document.getElementById('foodModal').classList.add('show');
+  document.body.style.overflow='hidden';
 }
 
+function closeFoodModal(){
+  document.getElementById('foodModal').classList.remove('show');
+  document.body.style.overflow='auto';
+}
+
+function openZoom(src){
+  document.getElementById('zoomImg').src = src;
+  document.getElementById('imgZoomModal').classList.add('show');
+}
+function closeZoom(){
+  document.getElementById('imgZoomModal').classList.remove('show');
+}
 
 
 //gallery
